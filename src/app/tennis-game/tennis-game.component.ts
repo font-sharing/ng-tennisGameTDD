@@ -10,6 +10,7 @@ export class TennisGameComponent implements OnInit {
   private secondPlayerScoreTimes = 0;
 
   private scoreLookup: { [key: number]: string } = {
+    0: 'Love',
     1: 'Fifteen',
     2: 'Thirty',
     3: 'Forty',
@@ -22,12 +23,14 @@ export class TennisGameComponent implements OnInit {
   }
 
   score() {
-    if (this.firstPlayerScoreTimes > 0) {
-      return `${this.scoreLookup[this.firstPlayerScoreTimes]} Love`;
+    if (this.firstPlayerScoreTimes !== this.secondPlayerScoreTimes) {
+      return `${this.scoreLookup[this.firstPlayerScoreTimes]} ${this.scoreLookup[this.secondPlayerScoreTimes]}`;
     }
-    if (this.secondPlayerScoreTimes > 0) {
-      return `Love ${this.scoreLookup[this.secondPlayerScoreTimes]}`;
+
+    if (this.firstPlayerScoreTimes === 1) {
+      return 'Fifteen All';
     }
+
     return `Love All`;
   }
 
