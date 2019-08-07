@@ -92,4 +92,10 @@ describe('TennisGameComponent', () => {
     givenFirstPlayerScoreTimes(1);
     scoreShouldBe('Tim Adv');
   });
+
+  it('Hen Adv', () => {
+    givenDeuce();
+    givenSecondPlayerScoreTimes(1);
+    scoreShouldBe('Hen Adv');
+  });
 });
