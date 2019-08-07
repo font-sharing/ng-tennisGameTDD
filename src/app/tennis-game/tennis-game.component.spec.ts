@@ -52,4 +52,10 @@ describe('TennisGameComponent', () => {
     component.addSecondPlayerScoreTimes();
     scoreShouldBe('Love Fifteen');
   });
+
+  it('Love Thirty', () => {
+    component.addSecondPlayerScoreTimes();
+    component.addSecondPlayerScoreTimes();
+    scoreShouldBe('Love Thirty');
+  });
 });
