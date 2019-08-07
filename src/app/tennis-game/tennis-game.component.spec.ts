@@ -32,9 +32,14 @@ describe('TennisGameComponent', () => {
     scoreShouldBe('Fifteen Love');
   });
 
+  function givenFirstPlayerScoreTimes(times: number) {
+    for (let i = 0; i < times; i++) {
+      component.addFirstPlayerScoreTimes();
+    }
+  }
+
   it('Thirty Love', () => {
-    component.addFirstPlayerScoreTimes();
-    component.addFirstPlayerScoreTimes();
+    givenFirstPlayerScoreTimes(2);
     scoreShouldBe('Thirty Love');
   });
 });
