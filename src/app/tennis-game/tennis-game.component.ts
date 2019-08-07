@@ -26,13 +26,20 @@ export class TennisGameComponent implements OnInit {
 
   score() {
     if (this.isDifferenceScore()) {
-      if (this.firstPlayerScoreTimes > 3 || this.secondPlayerScoreTimes > 3) {
-        let player = this.firstPlayerScoreTimes > this.secondPlayerScoreTimes ? this.firstPlayer : this.secondPlayer;
-        return `${player} Adv`;
+      if (this.isGamePoint()) {
+        return `${(this.advPlayer())} Adv`;
       }
       return this.normalScore();
     }
     return this.isDeuce() ? 'Deuce' : this.sameScore();
+  }
+
+  private isGamePoint() {
+    return this.firstPlayerScoreTimes > 3 || this.secondPlayerScoreTimes > 3;
+  }
+
+  private advPlayer() {
+    return this.firstPlayerScoreTimes > this.secondPlayerScoreTimes ? this.firstPlayer : this.secondPlayer;
   }
 
   private isDeuce() {
