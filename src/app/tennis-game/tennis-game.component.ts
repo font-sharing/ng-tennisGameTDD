@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TennisGameComponent implements OnInit {
   @Input() firstPlayer: string;
+  @Input() secondPlayer: string;
 
   private firstPlayerScoreTimes = 0;
   private secondPlayerScoreTimes = 0;
@@ -25,8 +26,9 @@ export class TennisGameComponent implements OnInit {
 
   score() {
     if (this.isDifferenceScore()) {
-      if (this.firstPlayerScoreTimes > 3) {
-        return `${this.firstPlayer} Adv`;
+      if (this.firstPlayerScoreTimes > 3 || this.secondPlayerScoreTimes > 3) {
+        let player = this.firstPlayerScoreTimes > this.secondPlayerScoreTimes ? this.firstPlayer : this.secondPlayer;
+        return `${player} Adv`;
       }
       return this.normalScore();
     }

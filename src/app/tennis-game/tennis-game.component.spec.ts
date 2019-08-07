@@ -17,6 +17,7 @@ describe('TennisGameComponent', () => {
     fixture = TestBed.createComponent(TennisGameComponent);
     component = fixture.componentInstance;
     component.firstPlayer = 'Tim';
+    component.secondPlayer = 'Hen';
     fixture.detectChanges();
   });
 
