@@ -23,10 +23,22 @@ export class TennisGameComponent implements OnInit {
   }
 
   score() {
-    if (this.firstPlayerScoreTimes !== this.secondPlayerScoreTimes) {
-      return `${this.scoreLookup[this.firstPlayerScoreTimes]} ${this.scoreLookup[this.secondPlayerScoreTimes]}`;
+    if (this.isDifferenceScore()) {
+      return this.normalScore();
     }
 
+    return this.sameScore();
+  }
+
+  private normalScore() {
+    return `${this.scoreLookup[this.firstPlayerScoreTimes]} ${this.scoreLookup[this.secondPlayerScoreTimes]}`;
+  }
+
+  private isDifferenceScore() {
+    return this.firstPlayerScoreTimes !== this.secondPlayerScoreTimes;
+  }
+
+  private sameScore() {
     return `${this.scoreLookup[this.firstPlayerScoreTimes]} All`;
   }
 
