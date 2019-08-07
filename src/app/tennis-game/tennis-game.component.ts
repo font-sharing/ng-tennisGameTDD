@@ -13,6 +13,6 @@ export class TennisGameComponent implements OnInit {
   }
 
   score() {
-    return undefined;
+    return `Love All`;
   }
 }
