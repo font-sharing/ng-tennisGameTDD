@@ -31,4 +31,8 @@ export class TennisGameComponent implements OnInit {
   addFirstPlayerScoreTimes() {
     this.firstPlayerScoreTimes++;
   }
+
+  addSecondPlayerScoreTimes() {
+
+  }
 }
