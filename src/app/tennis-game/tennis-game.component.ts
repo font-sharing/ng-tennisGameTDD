@@ -11,6 +11,7 @@ export class TennisGameComponent implements OnInit {
   private scoreLookup: { [key: number]: string } = {
     1: 'Fifteen',
     2: 'Thirty',
+    3: 'Forty',
   };
 
   constructor() {
