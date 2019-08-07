@@ -19,7 +19,11 @@ describe('TennisGameComponent', () => {
     fixture.detectChanges();
   });
 
+  function scoreShouldBe(expected: string) {
+    expect(component.score()).toBe(expected);
+  }
+
   it('Love All', () => {
-    expect(component.score()).toBe('Love All');
+    scoreShouldBe('Love All');
   });
 });
