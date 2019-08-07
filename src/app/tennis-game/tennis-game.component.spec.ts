@@ -16,6 +16,7 @@ describe('TennisGameComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TennisGameComponent);
     component = fixture.componentInstance;
+    component.firstPlayer = 'Tim';
     fixture.detectChanges();
   });
 

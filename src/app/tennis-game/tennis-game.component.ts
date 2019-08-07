@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tennis-game',
@@ -6,9 +6,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./tennis-game.component.css']
 })
 export class TennisGameComponent implements OnInit {
+  @Input() firstPlayer: string;
+
   private firstPlayerScoreTimes = 0;
   private secondPlayerScoreTimes = 0;
-
   private scoreLookup: { [key: number]: string } = {
     0: 'Love',
     1: 'Fifteen',
@@ -24,6 +25,9 @@ export class TennisGameComponent implements OnInit {
 
   score() {
     if (this.isDifferenceScore()) {
+      if (this.firstPlayerScoreTimes > 3) {
+        return `${this.firstPlayer} Adv`;
+      }
       return this.normalScore();
     }
     return this.isDeuce() ? 'Deuce' : this.sameScore();
