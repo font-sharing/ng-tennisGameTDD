@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TennisGameComponent } from './tennis-game.component';
+import {TennisGameComponent} from './tennis-game.component';
 
 describe('TennisGameComponent', () => {
   let component: TennisGameComponent;
@@ -8,9 +8,9 @@ describe('TennisGameComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TennisGameComponent ]
+      declarations: [TennisGameComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('TennisGameComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Love All', () => {
+    expect(component.score()).toBe('Love All');
   });
 });

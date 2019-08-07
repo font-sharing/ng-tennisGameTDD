@@ -12,4 +12,7 @@ export class TennisGameComponent implements OnInit {
   ngOnInit() {
   }
 
+  score() {
+    return undefined;
+  }
 }
