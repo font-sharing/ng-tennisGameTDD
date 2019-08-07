@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tennis-game',
@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TennisGameComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   score() {
     return `Love All`;
+  }
+
+  addFirstPlayerScoreTimes() {
+
   }
 }

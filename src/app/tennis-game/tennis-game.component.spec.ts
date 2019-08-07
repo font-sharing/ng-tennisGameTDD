@@ -26,4 +26,9 @@ describe('TennisGameComponent', () => {
   it('Love All', () => {
     scoreShouldBe('Love All');
   });
+
+  it('Fifteen Love', () => {
+    component.addFirstPlayerScoreTimes();
+    scoreShouldBe('Fifteen Love');
+  });
 });
