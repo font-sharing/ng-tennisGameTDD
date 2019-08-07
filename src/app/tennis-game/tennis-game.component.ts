@@ -26,7 +26,9 @@ export class TennisGameComponent implements OnInit {
     if (this.isDifferenceScore()) {
       return this.normalScore();
     }
-
+    if (this.firstPlayerScoreTimes >= 3) {
+      return 'Deuce';
+    }
     return this.sameScore();
   }
 
