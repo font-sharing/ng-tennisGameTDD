@@ -26,12 +26,13 @@ export class TennisGameComponent implements OnInit {
 
   score() {
     if (this.isDifferenceScore()) {
-      if (this.isGamePoint()) {
-        return `${(this.advPlayer())} Adv`;
-      }
-      return this.normalScore();
+      return this.isGamePoint() ? `${(this.advPlayer())} ${(this.advState())}` : this.normalScore();
     }
     return this.isDeuce() ? 'Deuce' : this.sameScore();
+  }
+
+  private advState() {
+    return Math.abs(this.firstPlayerScoreTimes - this.secondPlayerScoreTimes) === 1 ? `Adv` : `Win`;
   }
 
   private isGamePoint() {
