@@ -8,6 +8,11 @@ import {Component, OnInit} from '@angular/core';
 export class TennisGameComponent implements OnInit {
   private firstPlayerScoreTimes = 0;
 
+  private scoreLookup: { [key: number]: string } = {
+    1: 'Fifteen',
+    2: 'Thirty',
+  };
+
   constructor() {
   }
 
@@ -15,12 +20,8 @@ export class TennisGameComponent implements OnInit {
   }
 
   score() {
-    if (this.firstPlayerScoreTimes === 1) {
-      return `Fifteen Love`;
-    }
-
-    if (this.firstPlayerScoreTimes === 2) {
-      return `Thirty Love`;
+    if (this.firstPlayerScoreTimes > 0) {
+      return `${this.scoreLookup[this.firstPlayerScoreTimes]} Love`;
     }
 
     return `Love All`;
