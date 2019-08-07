@@ -19,6 +19,10 @@ export class TennisGameComponent implements OnInit {
       return `Fifteen Love`;
     }
 
+    if (this.firstPlayerScoreTimes === 2) {
+      return `Thirty Love`;
+    }
+
     return `Love All`;
   }
 
