@@ -27,15 +27,7 @@ export class TennisGameComponent implements OnInit {
       return `${this.scoreLookup[this.firstPlayerScoreTimes]} ${this.scoreLookup[this.secondPlayerScoreTimes]}`;
     }
 
-    if (this.firstPlayerScoreTimes === 1) {
-      return 'Fifteen All';
-    }
-
-    if (this.firstPlayerScoreTimes === 2) {
-      return 'Thirty All';
-    }
-
-    return `Love All`;
+    return `${this.scoreLookup[this.firstPlayerScoreTimes]} All`;
   }
 
   addFirstPlayerScoreTimes() {
