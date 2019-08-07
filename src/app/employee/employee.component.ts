@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {EmployeeService} from '../employee.service';
 import {Employee} from '../model';
 
@@ -9,13 +9,15 @@ import {Employee} from '../model';
 })
 export class EmployeeComponent implements OnInit {
 
+  @Input() employeeId: number;
   employeeInfo: string;
 
   constructor(private employeeService: EmployeeService) {
-    this.getEmployeeInfo(15896);
   }
 
   ngOnInit() {
+    this.getEmployeeInfo(this.employeeId);
+    this.verifyFunction();
   }
 
   getEmployeeInfo(id: number) {
@@ -23,4 +25,6 @@ export class EmployeeComponent implements OnInit {
       .subscribe((resp: Employee) => this.employeeInfo = `Name:${resp.employee_name}, Age:${resp.employee_age}`);
   }
 
+  verifyFunction(): void {
+  }
 }
